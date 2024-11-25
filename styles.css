@@ -1,0 +1,149 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Header */
+.hero-header {
+  height: 70vh;
+  background: linear-gradient(135deg, #ff9ce6, #9ce6ff);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-header .site-title {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+}
+
+.hero-header .site-title a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.hero-header .page-title {
+  font-size: 3rem;
+  margin: 0;
+}
+
+/* Navigation */
+.hero-header .site-nav ul {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-header .site-nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Content Sections */
+.content-section {
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 1200px;
+  background: white;
+  border-radius: 12px;
+  border: none;
+  position: relative;
+}
+
+/* Neon Glow Effect with Blur */
+.content-section::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: linear-gradient(135deg, rgba(255, 150, 255, 0.4), rgba(150, 255, 255, 0.4));
+  filter: blur(12px);
+  z-index: -1;
+  border-radius: inherit;
+}
+
+/* Side-by-Side Section */
+.side-by-side {
+  display: flex;
+  gap: 1rem;
+  margin: 1; /* Removed bounding box or outer margin */
+}
+
+.content-left, .content-right {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Neon Glow Effect for Inner Boxes */
+.content-left::before, .content-right::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: linear-gradient(135deg, rgba(255, 150, 255, 0.4), rgba(150, 255, 255, 0.4));
+  filter: blur(12px);
+  z-index: -1;
+  border-radius: inherit;
+}
+
+/* Images with Neon Glow */
+img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 150, 255, 0.3), 0 0 30px rgba(150, 255, 255, 0.3);
+}
+
+img:hover {
+  box-shadow: 0 0 25px rgba(255, 150, 255, 0.8), 0 0 50px rgba(150, 255, 255, 0.8);
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .hero-header {
+      height: 50vh;
+  }
+
+  .side-by-side {
+      flex-direction: column;
+  }
+
+  .hero-header .site-title,
+  .hero-header .site-nav ul {
+      position: static;
+  }
+}
